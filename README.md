@@ -10,7 +10,7 @@ Install Brunnhilde command-line utility using pip:
 pip install brunnhilde
 ```  
 
-If Brunnhilde is properly installed, you should be able to call it from any location in a terminal windows by entering "python brunnhilde.py".  
+If Brunnhilde is properly installed, you should be able to call it from any location in a terminal window by entering "python brunnhilde.py".  
 
 #### GUI Installation in Bitcurator  
 
