@@ -34,7 +34,7 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 
 #### GUI Installation in Linux
 
-For non-Bitcurator Linux machines, make sure you have PyQT4 installed. In Debian/Ubuntu, this can be installed with the following command:  
+For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
 `sudo apt-get install python-qt4`  
 
 Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice.  
