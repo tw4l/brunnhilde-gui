@@ -41,6 +41,8 @@ Follow the steps above, placing the Brunnhilde.desktop file in a location of you
 
 #### GUI Installation in MacOS/OS X  
 
+* Install PyQt4 with Homebrew:  
+`brew install pyqt`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Launch GUI by entering following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
