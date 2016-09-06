@@ -55,6 +55,9 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
         # clear output windows
         self.textEdit.clear()
         self.textEdit_2.clear()
+        
+        # brunnhilde.py path
+        brunnhilde_path = "/usr/share/brunnhilde/brunnhilde.py"
 
         # create list for options
         self.options = []
@@ -74,7 +77,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
 
             # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
             self.proc = QProcess()
-            self.proc.start("python", QStringList() << "brunnhilde.py" << self.options << 
+            self.proc.start("python", QStringList() << brunnhilde_path << self.options << 
                 self.directorySource.text() << self.destination.text() << self.identifier.text())
             self.proc.setProcessChannelMode(QProcess.MergedChannels);
             QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
@@ -104,7 +107,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
 
              # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
             self.proc = QProcess()
-            self.proc.start("python", QStringList() << "brunnhilde.py" << self.options << 
+            self.proc.start("python", QStringList() << brunnhilde_path << self.options << 
                 self.diskImageSource.text() << self.destination.text() << self.identifier.text())
             self.proc.setProcessChannelMode(QProcess.MergedChannels);
             QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
