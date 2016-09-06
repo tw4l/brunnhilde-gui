@@ -45,7 +45,7 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 `brew install pyqt`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the brunnhilde.py script  
-* Launch GUI by entering following in a terminal:  
+* Launch GUI by entering the following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
 
 ### Licensing  
