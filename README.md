@@ -23,24 +23,22 @@ Icon=/usr/share/brunnhilde/icon.png
 ```  
 * Save and close Brunnhilde.desktop  
 * Right-click on Brunnhilde.desktop, go to the "Permissions" tab, and check the box "Allow executing file as program"  
+* If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script  
 
 You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Additional Tools" folder.  
 
 #### GUI Installation in Linux
 
-For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
+* For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
 `sudo apt-get install python-qt4`  
-
-Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice. 
-
-If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
+* Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice and making sure that the brunnhilde_path variable in main.py is accurate.  
 
 #### GUI Installation in MacOS/OS X  
 
 * Install PyQt4 with Homebrew:  
 `brew install pyqt`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
-* Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of brunnhilde.py  
+* Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the brunnhilde.py script  
 * Launch GUI by entering following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
 
