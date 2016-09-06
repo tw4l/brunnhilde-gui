@@ -48,6 +48,10 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 * Launch GUI by entering the following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
 
+### Usage  
+
+For detailed information about how Brunnhilde works, see the [Brunnhilde command line utility](https://github.com/timothyryanwalsh/brunnhilde) repo.  
+
 ### Licensing  
 
 The MIT License (MIT)  
