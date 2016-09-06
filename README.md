@@ -4,13 +4,7 @@
 
 #### Install Brunnhilde  
 
-Install Brunnhilde command-line utility using pip:  
-
-```  
-pip install brunnhilde
-```  
-
-If Brunnhilde is properly installed, you should be able to call it from any location in a terminal window by entering "python brunnhilde.py".  
+Install Brunnhilde command-line utility by downloading the source code as a tar.gz or .zip from the [Brunnhilde repo](http://github.com/timothyryanwalsh/brunnhilde) and extracting the 'brunnhilde' folder containing brunnhilde.py to a location of your choice. For easy installation in Bitcurator, save the folder to /usr/share.  
 
 #### GUI Installation in Bitcurator  
 
@@ -37,13 +31,16 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
 `sudo apt-get install python-qt4`  
 
-Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice.  
+Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice. 
+
+If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
 
 #### GUI Installation in MacOS/OS X  
 
 * Install PyQt4 with Homebrew:  
 `brew install pyqt`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
+* Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of brunnhilde.py  
 * Launch GUI by entering following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
 
