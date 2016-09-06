@@ -8,7 +8,7 @@ Install the Brunnhilde command-line utility by downloading the source code from 
 
 For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/brunnhilde.py.  
 
-The GUI requires Brunnhilde v1.1.0 or higher.  
+The GUI requires Brunnhilde v1.1.0 or higher. Dependencies must be installed as explained in [Brunnhilde](http://github.com/timothyryanwalsh/brunnhilde) repo.  
 
 #### GUI Installation in Bitcurator  
 
