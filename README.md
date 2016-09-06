@@ -17,7 +17,7 @@ The following instructions will install a graphical icon that launches the Brunn
 * Download zip or tar.gz file from Github and extract files to Desktop  
 * Save files to /usr/share/brunnhilde-gui:  
 `sudo mv /home/bcadmin/Desktop/brunnhilde-gui-master /usr/share/brunnhilde-gui`  
-* In "Additional Tools", create a new file called "Brunnhilde.desktop". Enter this file in a text editor and copy in the following contents:  
+* In "Additional Tools", create a new file called "Brunnhilde.desktop". Open this file in a text editor and save the following contents:  
 ```
 [Desktop Entry]
 Type=Application
@@ -25,7 +25,6 @@ Name=Brunnhilde
 Exec=/usr/share/brunnhilde-gui/launch
 Icon=/usr/share/brunnhilde-gui/icon.png
 ```  
-* Save and close Brunnhilde.desktop  
 * Right-click on Brunnhilde.desktop, go to the "Permissions" tab, and check the box "Allow executing file as program"  
 * Make bash script that launches GUI executable:  
 `sudo chmod u+x /usr/share/brunnhilde-gui/launch`  
