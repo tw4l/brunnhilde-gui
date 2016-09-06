@@ -4,15 +4,15 @@
 
 #### Install Brunnhilde CLI utility  
 
-Install the Brunnhilde command-line utility by downloading the source code as a tar.gz or .zip from the [Brunnhilde repo](http://github.com/timothyryanwalsh/brunnhilde) and extracting the 'brunnhilde' folder containing brunnhilde.py to a location of your choice. For easy installation in Bitcurator, save the folder to /usr/share.  
+Install the Brunnhilde command-line utility by downloading the source code as a tar.gz or .zip from the [Brunnhilde repo](http://github.com/timothyryanwalsh/brunnhilde) and extracting the 'brunnhilde' folder containing brunnhilde.py to a location of your choice. For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/brunnhilde.py.  
 
 #### GUI Installation in Bitcurator  
 
 The following instructions will install a graphical icon that launches the Brunnhilde GUI in the "Additional Tools" folder on the Bitcurator desktop.  
 
 * Download zip or tar.gz file from Github and extract files to Desktop  
-* In terminal, enter following command:  
-`sudo mv /home/bcadmin/Desktop/[EXTRACTED FOLDER]/brunnhilde-gui /usr/share`  
+* Save files to /usr/share/brunnhilde-gui:  
+`sudo mv /home/bcadmin/Desktop/brunnhilde-gui-master /usr/share/brunnhilde-gui`  
 * In "Additional Tools", create a new file called "Brunnhilde.desktop". Enter this file in a text editor and copy in the following contents:  
 ```
 [Desktop Entry]
