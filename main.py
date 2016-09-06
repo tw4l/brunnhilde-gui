@@ -89,7 +89,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
         # source is a disk image
         elif self.radioButton_2.isChecked():
             
-            # add disk image flag
+            # add disk image flag  
             self.options.append('-d')
             
             # universal option handling
