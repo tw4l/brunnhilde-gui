@@ -56,6 +56,9 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
         self.textEdit.clear()
         self.textEdit_2.clear()
         
+        # give indication process has started
+        self.textEdit.append('Process started')
+        
         # brunnhilde.py path
         brunnhilde_path = "/usr/share/brunnhilde/brunnhilde.py"
 
