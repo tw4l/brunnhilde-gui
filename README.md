@@ -18,8 +18,8 @@ The following instructions will install a graphical icon that launches the Brunn
 [Desktop Entry]
 Type=Application
 Name=Brunnhilde
-Exec=/usr/share/brunnhilde=gui/launch
-Icon=/usr/share/brunnhilde/icon.png
+Exec=/usr/share/brunnhilde-gui/launch
+Icon=/usr/share/brunnhilde-gui/icon.png
 ```  
 * Save and close Brunnhilde.desktop  
 * Right-click on Brunnhilde.desktop, go to the "Permissions" tab, and check the box "Allow executing file as program"  
