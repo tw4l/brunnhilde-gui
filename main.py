@@ -63,7 +63,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
         self.options = []
         
         # give indication process has started
-        self.textEdit.append('Process started')
+        self.textEdit.append('Process started.')
 
         # source is a directory
         if self.radioButton.isChecked():
