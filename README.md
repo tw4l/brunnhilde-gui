@@ -23,9 +23,10 @@ Icon=/usr/share/brunnhilde-gui/icon.png
 ```  
 * Save and close Brunnhilde.desktop  
 * Right-click on Brunnhilde.desktop, go to the "Permissions" tab, and check the box "Allow executing file as program"  
-* If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script  
 * Make bash script that launches GUI executable:  
-`sudo chmod u+x /usr/share/brunnhilde-gui/launch`
+`sudo chmod u+x /usr/share/brunnhilde-gui/launch`  
+
+Note: If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, you must modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
 
 You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Additional Tools" folder.  
 
