@@ -4,7 +4,9 @@
 
 #### Install Brunnhilde CLI utility  
 
-Install the Brunnhilde command-line utility by downloading the source code as a tar.gz or .zip from the [Brunnhilde repo](http://github.com/timothyryanwalsh/brunnhilde) and extracting the 'brunnhilde' folder containing brunnhilde.py to a location of your choice. For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/brunnhilde.py.  
+Install the Brunnhilde command-line utility by downloading the source code as a tar.gz or .zip from the [Brunnhilde repo](http://github.com/timothyryanwalsh/brunnhilde) and saving brunnhilde.py to your local disk. 
+
+For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/brunnhilde.py.  
 
 #### GUI Installation in Bitcurator  
 
