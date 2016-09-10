@@ -6,7 +6,7 @@ sudo mv design.py /usr/share/brunnhilde-gui
 sudo mv design.ui /usr/share/brunnhilde-gui
 sudo mv icon.png /usr/share/brunnhilde-gui
 sudo mv launch /usr/share/brunnhilde-gui
-sudo mv main.py /sur/share/brunnhilde-gui
+sudo mv main.py /usr/share/brunnhilde-gui
 
 # create Brunnhilde GUI.desktop file
 sudo touch '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
