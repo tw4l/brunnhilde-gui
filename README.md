@@ -12,22 +12,9 @@ The GUI requires Brunnhilde v1.1.0 or higher. Version 1.2.3 or higher is recomme
 
 #### GUI Installation in Bitcurator  
 
-The following instructions will install a graphical icon that launches the Brunnhilde GUI in the "Additional Tools" folder on the Bitcurator desktop.  
-
-* Download zip or tar.gz file from Github and extract files to Desktop  
-* Save files to /usr/share/brunnhilde-gui:  
-`sudo mv /home/bcadmin/Desktop/brunnhilde-gui-master /usr/share/brunnhilde-gui`  
-* In "Additional Tools", create a new file called "Brunnhilde.desktop". Open this file in a text editor and save the following contents:  
-```
-[Desktop Entry]
-Type=Application
-Name=Brunnhilde
-Exec=/usr/share/brunnhilde-gui/launch
-Icon=/usr/share/brunnhilde-gui/icon.png
-```  
-* Right-click on Brunnhilde.desktop, go to the "Permissions" tab, and check the box "Allow executing file as program"  
-* Make bash script that launches GUI executable:  
-`sudo chmod u+x /usr/share/brunnhilde-gui/launch`  
+* Download tar.gz or zip file and extract to location of your choice.  
+* In terminal, run install.sh script:  
+`bash install.sh`  
 
 Note: If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, you must modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
 
@@ -37,7 +24,9 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 
 * For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
 `sudo apt-get install python-qt4`  
-* Follow the steps above, placing the Brunnhilde.desktop file in a location of your choice and and making sure that the brunnhilde_path variable in line 60 of main.py is accurate.  
+* Download zip or tar.gz file from Github and extract files to location of your choice  
+* Modify the install.sh script to create the Brunnhilde GUI.desktop file in a location of your choice. This will will become the graphical launcher for the Brunnhilde GUI. Or, simply save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
+`python /path/to/brunnhilde-gui/main.py`  
 
 #### GUI Installation in MacOS/OS X  
 
