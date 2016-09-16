@@ -12,9 +12,9 @@ The GUI requires Brunnhilde v1.1.0 or higher. Version 1.2.3 or higher is recomme
 
 #### GUI Installation in Bitcurator  
 
-* Download tar.gz or zip file and extract to location of your choice.  
-* In terminal, cd to extracted files and run install.sh script:  
-`bash install.sh`  
+* Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone).  
+* Run install.sh script:  
+`bash /path/to/install.sh`  
 
 Note: If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, you must modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
 
