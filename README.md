@@ -10,6 +10,11 @@ For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/br
 
 The GUI requires Brunnhilde v1.1.0 or higher. Version 1.2.4 or higher is recommended. Dependencies must be installed as explained in [Brunnhilde](http://github.com/timothyryanwalsh/brunnhilde) repo.  
 
+#### Install PyQt4  
+
+Install PyQt4 if not already installed. This step is necessary for Bitcurator 1.7.74.  
+`sudo apt-get install python-qt4`  
+
 #### GUI Installation in Bitcurator  
 
 * Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone).  
