@@ -12,8 +12,16 @@ The GUI requires Brunnhilde v1.1.0 or higher. Version 1.2.4 or higher is recomme
 
 #### Install PyQt4  
 
-Install PyQt4 if not already installed. This step is necessary for Bitcurator 1.7.74.  
+Install PyQt4 if not already installed.  
+
+##### Ubuntu/Debian Linux (including Bitcurator 1.7.74)  
+
 `sudo apt-get install python-qt4`  
+
+##### macOS/OS X  
+
+Install PyQt4 with Homebrew:  
+`brew install pyqt`
 
 #### GUI Installation in Bitcurator  
 
@@ -27,16 +35,12 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 
 #### GUI Installation in Linux
 
-* For non-Bitcurator Linux machines, make sure you have PyQt4 installed. In Debian/Ubuntu, this can be installed with the following command:  
-`sudo apt-get install python-qt4`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Modify the install.sh script to create the Brunnhilde GUI.desktop file in a location of your choice. This will will become the graphical launcher for the Brunnhilde GUI. Or, simply save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
 `python /path/to/brunnhilde-gui/main.py`  
 
 #### GUI Installation in MacOS/OS X  
 
-* Install PyQt4 with Homebrew:  
-`brew install pyqt`  
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the brunnhilde.py script  
 * Launch GUI by entering the following in a terminal:  
