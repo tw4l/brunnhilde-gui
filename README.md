@@ -17,7 +17,7 @@ Install PyQt4 if not already installed. This step is necessary for Bitcurator 1.
 
 #### GUI Installation in Bitcurator  
 
-* Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone).  
+* Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone').  
 * Run install.sh script:  
 `bash /path/to/install.sh`  
 
