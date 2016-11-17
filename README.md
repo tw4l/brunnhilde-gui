@@ -14,7 +14,7 @@ This version of the GUI requires Brunnhilde 1.3.0 or higher. Currently works wit
 
 Install PyQt4 if not already installed.  
 
-##### Ubuntu/Debian Linux (including Bitcurator 1.7.74)  
+##### Ubuntu/Debian Linux (including Bitcurator 1.7.74+)  
 
 `sudo apt-get install python-qt4`  
 
