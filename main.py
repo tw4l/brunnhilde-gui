@@ -77,6 +77,18 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
                 self.options.append('-z')
             if self.throttleSiegfriedBtn.isChecked():
                 self.options.append('-t')
+            if self.sfWarningsBtn.isChecked():
+                self.options.append('-w')
+            if self.btn_sha1.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha1')
+            if self.btn_sha256.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha256')
+            if self.btn_sha512.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha512')
+
 
             # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
             self.proc = QProcess()
@@ -101,6 +113,17 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
                 self.options.append('-z')
             if self.throttleSiegfriedBtn.isChecked():
                 self.options.append('-t')
+            if self.sfWarningsBtn.isChecked():
+                self.options.append('-w')
+            if self.btn_sha1.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha1')
+            if self.btn_sha256.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha256')
+            if self.btn_sha512.isChecked():
+                self.options.append('--hash')
+                self.options.append('sha512')
 
             # disk image option handling
             if self.removeFilesBtn.isChecked():

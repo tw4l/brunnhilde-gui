@@ -6,54 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>687</width>
-    <height>832</height>
+    <width>606</width>
+    <height>759</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Brunnhilde GUI</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_8">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="19" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Choose source&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Checksum algorithm&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="text">
-       <string>Directory</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="directorySource">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>/path/to/directory</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="directoryBrowseBtn">
+    <item row="6" column="3">
+     <widget class="QPushButton" name="diskImageBrowseBtn">
       <property name="text">
        <string>Browse</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QRadioButton" name="radioButton_2">
-      <property name="text">
-       <string>Disk image</string>
-      </property>
-     </widget>
-    </item>
-    <item>
+    <item row="6" column="0" colspan="2">
      <widget class="QLineEdit" name="diskImageSource">
       <property name="text">
        <string/>
@@ -63,35 +39,7 @@
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QPushButton" name="diskImageBrowseBtn">
-      <property name="text">
-       <string>Browse</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="hfsDiskBtn">
-      <property name="text">
-       <string>Hierarchical File System (HFS)-formatted disk</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="removeFilesBtn">
-      <property name="text">
-       <string>Remove files carved from disk image at end of process</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Destination for reports&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
+    <item row="10" column="0" colspan="2">
      <widget class="QLineEdit" name="destination">
       <property name="text">
        <string/>
@@ -101,21 +49,58 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="28" column="0">
+     <widget class="QPushButton" name="startScanBtn">
+      <property name="text">
+       <string>Start scan</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QLineEdit" name="directorySource">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>/path/to/directory</string>
+      </property>
+     </widget>
+    </item>
+    <item row="27" column="0" colspan="2">
+     <widget class="QTextEdit" name="textEdit_2"/>
+    </item>
+    <item row="25" column="0" colspan="3">
+     <widget class="QTextEdit" name="textEdit"/>
+    </item>
+    <item row="10" column="3">
      <widget class="QPushButton" name="destinationBrowseBtn">
       <property name="text">
        <string>Browse</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLabel" name="label_4">
+    <item row="5" column="0">
+     <widget class="QRadioButton" name="radioButton_2">
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Accesion number or identifier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Disk image</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="directoryBrowseBtn">
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Choose source&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0" colspan="2">
      <widget class="QLineEdit" name="identifier">
       <property name="text">
        <string/>
@@ -125,65 +110,143 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
+     <widget class="QRadioButton" name="radioButton">
+      <property name="text">
+       <string>Directory</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Destination for reports&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Options&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="14" column="1">
+     <widget class="QCheckBox" name="scanArchivesBtn">
+      <property name="text">
+       <string>Scan archive files (zip, tar, etc.)</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QCheckBox" name="removeFilesBtn">
+      <property name="text">
+       <string>Remove files carved from disk image at end of process</string>
+      </property>
+     </widget>
+    </item>
+    <item row="21" column="0">
+     <widget class="QRadioButton" name="btn_sha1">
+      <property name="text">
+       <string>sha1</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">buttonGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="14" column="0">
      <widget class="QCheckBox" name="skipClamscanBtn">
       <property name="text">
        <string>Skip virus scan</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QCheckBox" name="bulkExtractorBtn">
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_4">
       <property name="text">
-       <string>Run bulk_extractor</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Accesion number or identifier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QCheckBox" name="scanArchivesBtn">
+    <item row="20" column="0">
+     <widget class="QRadioButton" name="btn_md5">
       <property name="text">
-       <string>Scan archive files (zip, tar, etc.)</string>
+       <string>md5</string>
       </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">buttonGroup</string>
+      </attribute>
      </widget>
     </item>
-    <item>
-     <widget class="QCheckBox" name="throttleSiegfriedBtn">
+    <item row="21" column="1">
+     <widget class="QRadioButton" name="btn_sha512">
       <property name="text">
-       <string>Throttle Siegfried</string>
+       <string>sha512</string>
       </property>
+      <attribute name="buttonGroup">
+       <string notr="true">buttonGroup</string>
+      </attribute>
      </widget>
     </item>
-    <item>
+    <item row="24" column="0">
      <widget class="QLabel" name="label_7">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Output (stdout)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-    <item>
+    <item row="26" column="0">
      <widget class="QLabel" name="label_2">
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Errors (stderr)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QTextEdit" name="textEdit_2"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="startScanBtn">
+    <item row="20" column="1">
+     <widget class="QRadioButton" name="btn_sha256">
       <property name="text">
-       <string>Start scan</string>
+       <string>sha256</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">buttonGroup</string>
+      </attribute>
+     </widget>
+    </item>
+    <item row="7" column="0" colspan="2">
+     <widget class="QCheckBox" name="hfsDiskBtn">
+      <property name="text">
+       <string>Hierarchical File System (HFS)-formatted disk</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QCheckBox" name="sfWarningsBtn">
+      <property name="text">
+       <string>Include Siegfried warnings in HTML</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="0">
+     <widget class="QCheckBox" name="throttleSiegfriedBtn">
+      <property name="text">
+       <string>Throttle Siegfried</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="0">
+     <widget class="QCheckBox" name="bulkExtractorBtn">
+      <property name="text">
+       <string>Run bulk_extractor</string>
       </property>
      </widget>
     </item>
@@ -192,4 +255,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
