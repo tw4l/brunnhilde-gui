@@ -18,7 +18,7 @@ Install PyQt4 if not already installed.
 
 `sudo apt-get install python-qt4`  
 
-##### macOS/OS X  
+##### OS X  
 
 Install PyQt4 with Homebrew:  
 `brew install pyqt` 
