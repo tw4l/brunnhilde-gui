@@ -21,7 +21,9 @@ Install PyQt4 if not already installed.
 ##### macOS/OS X  
 
 Install PyQt4 with Homebrew:  
-`brew install pyqt`
+`brew install pyqt` 
+
+Note: PyQt4 is not supported in macOS Sierra. A port to PyQt5 is not yet scheduled.  
 
 #### GUI Installation in Bitcurator  
 
