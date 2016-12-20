@@ -16,9 +16,10 @@ echo 'Name=Brunnhilde' | sudo tee --append '/home/bcadmin/Desktop/Additional Too
 echo 'Exec=/usr/share/brunnhilde-gui/launch' | sudo tee --append '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
 echo 'Icon=/usr/share/brunnhilde-gui/icon.png' | sudo tee --append '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
 
-# change permissions, ownership for Brunnhilde GUI.desktop
+# change permissions, ownership
 sudo chown bcadmin:bcadmin '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
 sudo chmod 644 '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
+sudo chown -R bcadmin:bcadmin '/usr/share/brunnhilde-gui'
 
 # make files exectuable
 sudo chmod u+x '/home/bcadmin/Desktop/Additional Tools/Brunnhilde GUI.desktop'
