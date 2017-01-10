@@ -89,7 +89,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
 
             # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
             self.proc = QProcess()
-            self.proc.start(QStringList() << 'brunnhilde.py' << self.options << 
+            self.proc.start("brunnhilde.py", QStringList() << self.options << 
                 self.directorySource.text() << self.destination.text() << self.identifier.text())
             self.proc.setProcessChannelMode(QProcess.MergedChannels);
             QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
@@ -130,7 +130,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
 
              # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
             self.proc = QProcess()
-            self.proc.start(QStringList() << 'brunnhilde.py' << self.options << 
+            self.proc.start("brunnhilde.py", QStringList() << self.options << 
                 self.diskImageSource.text() << self.destination.text() << self.identifier.text())
             self.proc.setProcessChannelMode(QProcess.MergedChannels);
             QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
