@@ -2,13 +2,17 @@
 
 ### Installation  
 
+#### Install Siegfried  
+
+Install Siegfried. See [Siegfried Github repo](https://github.com/richardlehane/siegfried/) for instructions.
+
 #### Install Brunnhilde CLI utility  
 
-Install the Brunnhilde command-line utility by downloading the source code from the [Brunnhilde](http://github.com/timothyryanwalsh/brunnhilde) repo and saving brunnhilde.py to your local disk. 
+Install the Brunnhilde command-line utility:
 
-For easy installation in Bitcurator, save the script to /usr/share/brunnhilde/brunnhilde.py.  
+`sudo pip install brunnhilde`
 
-This version of the GUI requires Brunnhilde 1.3.0 or higher. Currently works with Python 2 (tested in 2.7) only.  
+This version of the GUI requires Brunnhilde 1.4.0 or higher.
 
 #### Install PyQt4  
 
@@ -29,9 +33,7 @@ Note: PyQt4 is not supported in macOS Sierra. A port to PyQt5 is not yet schedul
 
 * Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone').  
 * Run install.sh script:  
-`bash /path/to/install.sh`  
-
-Note: If brunnhilde.py is not at /usr/share/brunnhilde/brunnhilde.py, you must modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the Brunnhilde CLI script.  
+`sudo bash install.sh`  
 
 You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Additional Tools" folder.  
 
@@ -44,7 +46,6 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 #### GUI Installation in MacOS/OS X  
 
 * Download zip or tar.gz file from Github and extract files to location of your choice  
-* Modify the variable brunnhilde_path in line 60 of main.py to reflect the location of the brunnhilde.py script  
 * Launch GUI by entering the following in a terminal:  
 `python /path/to/brunnhilde-gui/main.py`  
 
