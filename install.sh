@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# create /usr/share/brunnhilde-gui if doesn't already exist
+if [ ! -d /usr/share/brunnhilde-gui ]; then
+  sudo mkdir /usr/share/brunnhilde-gui
+fi
+
 # copy files to /usr/share/brunnhilde-gui
-sudo mkdir /usr/share/brunnhilde-gui
 sudo mv design.py /usr/share/brunnhilde-gui
 sudo mv design.ui /usr/share/brunnhilde-gui
 sudo mv icon.png /usr/share/brunnhilde-gui
