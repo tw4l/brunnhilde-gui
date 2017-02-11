@@ -1,6 +1,6 @@
 ## Brunnhilde GUI  
 
-![brunnhildegui](https://github.com/timothyryanwalsh/brunnhilde-gui/blob/master/brunnhilde-gui.png)  
+![brunnhildegui](https://github.com/timothyryanwalsh/brunnhilde-gui/blob/master/brunnhildegui.png)  
 
 ### Installation  
 
