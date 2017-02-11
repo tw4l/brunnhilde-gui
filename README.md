@@ -1,5 +1,7 @@
 ## Brunnhilde GUI  
 
+![brunnhildegui](https://github.com/timothyryanwalsh/brunnhilde-gui/blob/master/brunnhilde-gui.png)  
+
 ### Installation  
 
 #### Install Siegfried  
