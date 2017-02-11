@@ -22,12 +22,12 @@ Install PyQt4 if not already installed.
 
 `sudo apt-get install python-qt4`  
 
-##### OS X  
+##### macOS
 
-Install PyQt4 with Homebrew:  
+In Mavericks, simply install PyQt4 with Homebrew:  
 `brew install pyqt` 
 
-Note: PyQt4 is not supported in macOS Sierra. A port to PyQt5 is not yet scheduled.  
+Note: PyQt4 is not natively supported in macOS Sierra. A port to PyQt5 is upcoming but not yet scheduled. In the meantime, using Brunnhilde GUI in Sierra requires installation of Qt4 through [this homebrew tap](https://github.com/cartr/homebrew-qt4) prior to installation of PyQt4 as described above. Once the tap is installed, install PyQt4 with `brew install pyqt`. Follow the additional instructions given by Homebrew to complete installation. Please be aware that doing so will interfere with the native installation of Qt5.  
 
 #### GUI Installation in Bitcurator  
 
