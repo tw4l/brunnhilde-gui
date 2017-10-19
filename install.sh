@@ -16,7 +16,7 @@ sudo mv main.py /usr/share/brunnhilde-gui
 sudo touch '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 echo '[Desktop Entry]' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 echo 'Type=Application' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
-echo 'Name=Brunnhilde' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
+echo 'Name=Brunnhilde GUI' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 echo 'Exec=/usr/share/brunnhilde-gui/launch' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 echo 'Icon=/usr/share/brunnhilde-gui/icon.png' | sudo tee --append '/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 
