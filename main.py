@@ -9,6 +9,20 @@ import sys
 
 import design
 
+class StartScanThread(QThread):
+
+    def __init__(self, process_list):
+        QThread.__init__(self)
+        self.process_list = process_list
+
+    def start_scan(self):
+        print(self.process_list) # for debugging
+        subprocess.check_output(self.process_list)
+
+    def run(self):
+        self.start_scan()
+
+
 class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
     def __init__(self, parent=None):
@@ -25,22 +39,10 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         self.dirStartScanBtn.clicked.connect(self.start_scan_dir)
         self.diskImageStartScan.clicked.connect(self.start_scan_diskimage)
 
-    @pyqtSlot()
-    def readStdOutputDir(self):
-        self.dirOutput.append(QString(self.proc.readAllStandardOutput()))
-
-    @pyqtSlot()
-    def readStdErrorDir(self):
-        self.dirOutput.append(QString(self.proc.readAllStandardError()))
-
-    @pyqtSlot()
-    def readStdOutputDiskImage(self):
-        self.diskImageOutput.append(QString(self.proc.readAllStandardOutput()))
-
-    @pyqtSlot()
-    def readStdErrorDiskImage(self):
-        self.diskImageOutput.append(QString(self.proc.readAllStandardError()))
-
+        # Set buttons
+        self.dirCancelBtn.setEnabled(False)
+        self.dirStartScanBtn.setEnabled(True)
+    
     def browse_dirsource(self):
         self.dirSource.clear() # clear directory source text
         directory = QFileDialog.getExistingDirectory(self, "Select folder")
@@ -71,15 +73,28 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         if directory: # if user didn't pick directory don't continue
             self.diskImageDestination.setText(directory)
 
+    def done_dir(self):
+        self.dirCancelBtn.setEnabled(False)
+        self.dirStartScanBtn.setEnabled(True)
+        QMessageBox.information(self, "Done!", "Process complete.")
+        self.dirOutput.setText('Finished')
+
+    def done_diskimage(self):
+        self.diskImageCancelBtn.setEnabled(False)
+        self.diskImageStartScan.setEnabled(True)
+        QMessageBox.information(self, "Done!", "Process complete.")
+        self.diskImageOutput.setText('Finished')
+
     def start_scan_dir(self):
         # clear output window
         self.dirOutput.clear()
 
         # create list for process
         self.process_list = list()
+        self.process_list.append("brunnhilde.py")
         
         # give indication process has started
-        self.dirOutput.append('Process started.')
+        self.dirOutput.append('Processing.')
 
         # universal option handling
         if not self.virusScan.isChecked():
@@ -108,13 +123,14 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         self.process_list.append(self.dirDestination.text())
         self.process_list.append(self.dirIdentifier.text())
 
+        # process
+        self.get_thread = StartScanThread(self.process_list)
+        self.get_thread.finished.connect(self.done_dir)
+        self.get_thread.start()
+        self.dirCancelBtn.setEnabled(True)
+        self.dirCancelBtn.clicked.connect(self.get_thread.terminate)
+        self.dirStartScanBtn.setEnabled(False)
 
-        # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
-        self.proc = QProcess()
-        self.proc.start("brunnhilde.py", self.process_list)
-        self.proc.setProcessChannelMode(QProcess.MergedChannels);
-        QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutputDir()"));
-        QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdErrorDir()"));
 
     def start_scan_diskimage(self):
             
@@ -123,6 +139,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
         # create list for process
         self.process_list = list()
+        self.process_list.append("brunnhilde.py")
 
         # add disk image flag  
         self.process_list.append('-d')
@@ -158,13 +175,13 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         if self.resForks.isChecked():
             self.process_list.append('--resforks')
 
-         # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
-        self.proc = QProcess()
-        self.proc.start("brunnhilde.py", QStringList() << self.process_list << 
-            self.diskImageSource.text() << self.diskImageDestination.text() << self.diskImageIdentifier.text())
-        self.proc.setProcessChannelMode(QProcess.MergedChannels);
-        QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutputDiskImage()"));
-        QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdErrorDiskImage()"));
+         # process
+        self.get_thread = StartScanThread(self.process_list)
+        self.get_thread.finished.connect(self.done_dir)
+        self.get_thread.start()
+        self.diskImageCancelBtn.setEnabled(True)
+        self.diskImageCancelBtn.clicked.connect(self.get_thread.terminate)
+        self.diskImageStartScan.setEnabled(False)
 
 def main():
     app = QApplication(sys.argv)
