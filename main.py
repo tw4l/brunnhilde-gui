@@ -175,6 +175,10 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         if self.resForks.isChecked():
             self.process_list.append('--resforks')
 
+        self.process_list.append(self.diskImageSource.text())
+        self.process_list.append(self.diskImageDestination.text())
+        self.process_list.append(self.diskImageIdentifier.text())
+
          # process
         self.get_thread = StartScanThread(self.process_list)
         self.get_thread.finished.connect(self.done_dir)
