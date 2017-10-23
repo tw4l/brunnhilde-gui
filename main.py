@@ -1,41 +1,52 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from PyQt4.QtGui import *
-from PyQt4.QtCore import * 
+from PyQt5.QtGui import *
+from PyQt5.QtCore import * 
+from PyQt5.QtWidgets import *
 import subprocess
 import sys
 
 import design
 
-class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
+class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
     def __init__(self, parent=None):
         super(BrunnhildeApp, self).__init__(parent)
         self.setupUi(self)
 
         # build browse functionality buttons
-        self.directoryBrowseBtn.clicked.connect(self.browse_dirsource)
-        self.diskImageBrowseBtn.clicked.connect(self.browse_diskimage)
-        self.destinationBrowseBtn.clicked.connect(self.browse_dest)
+        self.dirSourceBtn.clicked.connect(self.browse_dirsource)
+        self.diskImageSourceBtn.clicked.connect(self.browse_diskimage)
+        self.dirDestinationBtn.clicked.connect(self.browse_dirdest)
+        self.diskImageDestinationBtn.clicked.connect(self.browse_diskimagedest)
 
-        # build start functionality
-        self.startScanBtn.clicked.connect(self.start_scan)
-
-    @pyqtSlot()
-    def readStdOutput(self):
-        self.textEdit.append(QString(self.proc.readAllStandardOutput()))
+        # build start functionalities
+        self.dirStartScanBtn.clicked.connect(self.start_scan_dir)
+        self.diskImageStartScan.clicked.connect(self.start_scan_diskimage)
 
     @pyqtSlot()
-    def readStdError(self):
-        self.textEdit_2.append(QString(self.proc.readAllStandardError()))
+    def readStdOutputDir(self):
+        self.dirOutput.append(QString(self.proc.readAllStandardOutput()))
+
+    @pyqtSlot()
+    def readStdErrorDir(self):
+        self.dirOutput.append(QString(self.proc.readAllStandardError()))
+
+    @pyqtSlot()
+    def readStdOutputDiskImage(self):
+        self.diskImageOutput.append(QString(self.proc.readAllStandardOutput()))
+
+    @pyqtSlot()
+    def readStdErrorDiskImage(self):
+        self.diskImageOutput.append(QString(self.proc.readAllStandardError()))
 
     def browse_dirsource(self):
-        self.directorySource.clear() # clear directory source text
+        self.dirSource.clear() # clear directory source text
         directory = QFileDialog.getExistingDirectory(self, "Select folder")
 
         if directory: # if user didn't pick directory don't continue
-            self.directorySource.setText(directory)
+            self.dirSource.setText(directory)
 
     def browse_diskimage(self):
         self.diskImageSource.clear() # clear existing disk image source text
@@ -44,97 +55,113 @@ class BrunnhildeApp(QMainWindow, design.Ui_MainWindow):
         if file: # if user didn't pick file don't continue
             self.diskImageSource.setText(diskimage)
 
-    def browse_dest(self):
-        self.destination.clear() # clear existing report destination text
-        directory = QFileDialog.getExistingDirectory(self, "Select folder")
+    def browse_dirdest(self):
+        self.dirDestination.clear() # clear existing report destination text
+        directory = Q
+        FileDialog.getExistingDirectory(self, "Select folder")
 
         if directory: # if user didn't pick directory don't continue
-            self.destination.setText(directory)
+            self.dirDestination.setText(directory)
 
-    def start_scan(self):
-        # clear output windows
-        self.textEdit.clear()
-        self.textEdit_2.clear()
+    def browse_diskimagedest(self):
+        self.diskImageDestination.clear() # clear existing report destination text
+        directory = Q
+        FileDialog.getExistingDirectory(self, "Select folder")
+
+        if directory: # if user didn't pick directory don't continue
+            self.diskImageDestination.setText(directory)
+
+    def start_scan_dir(self):
+        # clear output window
+        self.dirOutput.clear()
 
         # create list for options
         self.options = []
         
         # give indication process has started
-        self.textEdit.append('Process started.')
+        self.dirOutput.append('Process started.')
 
-        # source is a directory
-        if self.radioButton.isChecked():
+        # universal option handling
+        if not self.virusScan.isChecked():
+            self.options.append('-n')
+        if self.largeFiles.isChecked():
+            self.options.append('-l')
+        if self.bulkExtractor.isChecked():
+            self.options.append('-b')
+        if self.scanArchives.isChecked():
+            self.options.append('-z')
+        if self.throttleSiegfried.isChecked():
+            self.options.append('-t')
+        if self.sfWarnings.isChecked():
+            self.options.append('-w')
+        if self.sha1.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha1')
+        if self.sha256.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha256')
+        if self.sha512.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha512')
 
-            # universal option handling
-            if self.skipClamscanBtn.isChecked():
-                self.options.append('-n')
-            if self.bulkExtractorBtn.isChecked():
-                self.options.append('-b')
-            if self.scanArchivesBtn.isChecked():
-                self.options.append('-z')
-            if self.throttleSiegfriedBtn.isChecked():
-                self.options.append('-t')
-            if self.sfWarningsBtn.isChecked():
-                self.options.append('-w')
-            if self.btn_sha1.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha1')
-            if self.btn_sha256.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha256')
-            if self.btn_sha512.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha512')
 
+        # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
+        self.proc = QProcess()
+        self.proc.start("brunnhilde.py", QStringList() << self.options << 
+            self.dirSource.text() << self.dirDestination.text() << self.dirIdentifier.text())
+        self.proc.setProcessChannelMode(QProcess.MergedChannels);
+        QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutputDir()"));
+        QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdErrorDir()"));
 
-            # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
-            self.proc = QProcess()
-            self.proc.start("brunnhilde.py", QStringList() << self.options << 
-                self.directorySource.text() << self.destination.text() << self.identifier.text())
-            self.proc.setProcessChannelMode(QProcess.MergedChannels);
-            QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
-            QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdError()"));
-
-        # source is a disk image
-        elif self.radioButton_2.isChecked():
+    def start_scan_diskimage(self):
             
-            # add disk image flag  
-            self.options.append('-d')
-            
-            # universal option handling
-            if self.skipClamscanBtn.isChecked():
-                self.options.append('-n')
-            if self.bulkExtractorBtn.isChecked():
-                self.options.append('-b')
-            if self.scanArchivesBtn.isChecked():
-                self.options.append('-z')
-            if self.throttleSiegfriedBtn.isChecked():
-                self.options.append('-t')
-            if self.sfWarningsBtn.isChecked():
-                self.options.append('-w')
-            if self.btn_sha1.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha1')
-            if self.btn_sha256.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha256')
-            if self.btn_sha512.isChecked():
-                self.options.append('--hash')
-                self.options.append('sha512')
+        # clear output window
+        self.diskImageOutput.clear()
 
-            # disk image option handling
-            if self.removeFilesBtn.isChecked():
-                self.options.append('-r')
-            if self.hfsDiskBtn.isChecked():
-                self.options.append('--hfs')
+        # create list for options
+        self.options = []
 
-             # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
-            self.proc = QProcess()
-            self.proc.start("brunnhilde.py", QStringList() << self.options << 
-                self.diskImageSource.text() << self.destination.text() << self.identifier.text())
-            self.proc.setProcessChannelMode(QProcess.MergedChannels);
-            QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutput()"));
-            QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdError()"));
+        # add disk image flag  
+        self.options.append('-d')
+        
+        # universal option handling
+        if not self.virusScan.isChecked():
+            self.options.append('-n')
+        if self.largeFiles.isChecked():
+            self.options.append('-l')
+        if self.bulkExtractor.isChecked():
+            self.options.append('-b')
+        if self.scanArchives.isChecked():
+            self.options.append('-z')
+        if self.throttleSiegfried.isChecked():
+            self.options.append('-t')
+        if self.sfWarnings.isChecked():
+            self.options.append('-w')
+        if self.sha1.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha1')
+        if self.sha256.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha256')
+        if self.sha512.isChecked():
+            self.options.append('--hash')
+            self.options.append('sha512')
+
+        # disk image option handling
+        if self.removeFiles.isChecked():
+            self.options.append('-r')
+        if self.hfsDisk.isChecked():
+            self.options.append('--hfs')
+        if self.resForks.isChecked():
+            self.options.append('--resforks')
+
+         # run brunnhilde.py as QProcess and redirect stdout and stderr to GUI
+        self.proc = QProcess()
+        self.proc.start("brunnhilde.py", QStringList() << self.options << 
+            self.diskImageSource.text() << self.diskImageDestination.text() << self.diskImageIdentifier.text())
+        self.proc.setProcessChannelMode(QProcess.MergedChannels);
+        QObject.connect(self.proc, SIGNAL("readyReadStandardOutput()"), self, SLOT("readStdOutputDiskImage()"));
+        QObject.connect(self.proc, SIGNAL("readyReadStandardError()"), self, SLOT("readStdErrorDiskImage()"));
 
 def main():
     app = QApplication(sys.argv)
