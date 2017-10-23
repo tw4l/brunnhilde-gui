@@ -22,7 +22,6 @@ class StartScanThread(QThread):
     def run(self):
         self.start_scan()
 
-
 class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
     def __init__(self, parent=None):
@@ -76,25 +75,25 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
     def done_dir(self):
         self.dirCancelBtn.setEnabled(False)
         self.dirStartScanBtn.setEnabled(True)
-        QMessageBox.information(self, "Done!", "Process complete.")
-        self.dirOutput.setText('Finished')
+        QMessageBox.information(self, "Finished", "Brunnhilde scan complete.")
+        self.dirStatus.setText('Finished')
 
     def done_diskimage(self):
         self.diskImageCancelBtn.setEnabled(False)
         self.diskImageStartScan.setEnabled(True)
-        QMessageBox.information(self, "Done!", "Process complete.")
-        self.diskImageOutput.setText('Finished')
+        QMessageBox.information(self, "Finished", "Brunnhilde scan complete.")
+        self.diskImageStatus.setText('Finished')
 
     def start_scan_dir(self):
         # clear output window
-        self.dirOutput.clear()
+        self.dirStatus.clear()
 
         # create list for process
         self.process_list = list()
         self.process_list.append("brunnhilde.py")
         
         # give indication process has started
-        self.dirOutput.append('Processing.')
+        self.dirStatus.setText('Processing')
 
         # universal option handling
         if not self.virusScan.isChecked():
@@ -135,11 +134,14 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
     def start_scan_diskimage(self):
             
         # clear output window
-        self.diskImageOutput.clear()
+        self.diskImageStatus.clear()
 
         # create list for process
         self.process_list = list()
         self.process_list.append("brunnhilde.py")
+
+        # give indication process has started
+        self.diskImageStatus.setText('Processing')
 
         # add disk image flag  
         self.process_list.append('-d')
