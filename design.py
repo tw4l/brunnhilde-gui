@@ -20,7 +20,7 @@ class Ui_Brunnhilde(object):
         self.directoryTab = QtWidgets.QWidget()
         self.directoryTab.setObjectName("directoryTab")
         self.layoutWidget = QtWidgets.QWidget(self.directoryTab)
-        self.layoutWidget.setGeometry(QtCore.QRect(11, 21, 611, 267))
+        self.layoutWidget.setGeometry(QtCore.QRect(11, 21, 611, 391))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -89,7 +89,7 @@ class Ui_Brunnhilde(object):
         self.diskImageTab = QtWidgets.QWidget()
         self.diskImageTab.setObjectName("diskImageTab")
         self.layoutWidget_2 = QtWidgets.QWidget(self.diskImageTab)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(11, 21, 611, 301))
+        self.layoutWidget_2.setGeometry(QtCore.QRect(11, 21, 611, 391))
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -256,7 +256,7 @@ class Ui_Brunnhilde(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(Brunnhilde)
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Brunnhilde)
 
     def retranslateUi(self, Brunnhilde):
