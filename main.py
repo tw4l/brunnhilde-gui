@@ -130,7 +130,6 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
 
     def start_scan_diskimage(self):
-            
         # clear output window
         self.diskImageStatus.clear()
 
@@ -181,7 +180,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
          # process
         self.get_thread = StartScanThread(self.process_list)
-        self.get_thread.finished.connect(self.done_dir)
+        self.get_thread.finished.connect(self.done_diskimage)
         self.get_thread.start()
         self.diskImageCancelBtn.setEnabled(True)
         self.diskImageCancelBtn.clicked.connect(self.get_thread.terminate)
