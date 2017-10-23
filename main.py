@@ -58,16 +58,14 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
 
     def browse_dirdest(self):
         self.dirDestination.clear() # clear existing report destination text
-        directory = Q
-        FileDialog.getExistingDirectory(self, "Select folder")
+        directory = QFileDialog.getExistingDirectory(self, "Select folder")
 
         if directory: # if user didn't pick directory don't continue
             self.dirDestination.setText(directory)
 
     def browse_diskimagedest(self):
         self.diskImageDestination.clear() # clear existing report destination text
-        directory = Q
-        FileDialog.getExistingDirectory(self, "Select folder")
+        directory = QFileDialog.getExistingDirectory(self, "Select folder")
 
         if directory: # if user didn't pick directory don't continue
             self.diskImageDestination.setText(directory)
