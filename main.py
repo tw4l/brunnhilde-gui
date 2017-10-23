@@ -38,10 +38,17 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         self.dirStartScanBtn.clicked.connect(self.start_scan_dir)
         self.diskImageStartScan.clicked.connect(self.start_scan_diskimage)
 
+        # about menu functionality
+        self.actionAbout.triggered.connect(self.about_dialog)
+
         # Set buttons
         self.dirCancelBtn.setEnabled(False)
         self.dirStartScanBtn.setEnabled(True)
     
+    def about_dialog(self):
+        QMessageBox.information(self, "About", 
+            "Brunnhilde GUI v.2.0.0\nTim Walsh, 2017\nMIT License\nhttps://github.com/timothyryanwalsh/brunnhilde-gui\nCompatible with Brunnhilde 1.6.1+")
+
     def browse_dirsource(self):
         self.dirSource.clear() # clear directory source text
         directory = QFileDialog.getExistingDirectory(self, "Select folder")
