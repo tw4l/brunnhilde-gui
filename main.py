@@ -53,7 +53,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         self.diskImageSource.clear() # clear existing disk image source text
         diskimage = QFileDialog.getOpenFileName(self, "Select disk image")
 
-        if file: # if user didn't pick file don't continue
+        if diskimage: # if user didn't pick file don't continue
             self.diskImageSource.setText(diskimage)
 
     def browse_dirdest(self):
