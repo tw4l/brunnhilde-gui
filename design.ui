@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>658</width>
-    <height>442</height>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>10</x>
       <y>10</y>
       <width>631</width>
-      <height>381</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="directoryTab">
      <attribute name="title">
@@ -170,7 +170,7 @@
         <x>11</x>
         <y>21</y>
         <width>611</width>
-        <height>321</height>
+        <height>341</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_15">

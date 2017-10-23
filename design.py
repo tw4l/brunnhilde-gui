@@ -11,11 +11,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Brunnhilde(object):
     def setupUi(self, Brunnhilde):
         Brunnhilde.setObjectName("Brunnhilde")
-        Brunnhilde.resize(658, 442)
+        Brunnhilde.resize(658, 465)
         self.centralwidget = QtWidgets.QWidget(Brunnhilde)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(10, 10, 631, 381))
+        self.tabWidget.setGeometry(QtCore.QRect(10, 10, 631, 401))
         self.tabWidget.setObjectName("tabWidget")
         self.directoryTab = QtWidgets.QWidget()
         self.directoryTab.setObjectName("directoryTab")
@@ -89,7 +89,7 @@ class Ui_Brunnhilde(object):
         self.diskImageTab = QtWidgets.QWidget()
         self.diskImageTab.setObjectName("diskImageTab")
         self.layoutWidget_2 = QtWidgets.QWidget(self.diskImageTab)
-        self.layoutWidget_2.setGeometry(QtCore.QRect(11, 21, 611, 321))
+        self.layoutWidget_2.setGeometry(QtCore.QRect(11, 21, 611, 341))
         self.layoutWidget_2.setObjectName("layoutWidget_2")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -259,7 +259,7 @@ class Ui_Brunnhilde(object):
         self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(Brunnhilde)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Brunnhilde)
 
     def retranslateUi(self, Brunnhilde):
