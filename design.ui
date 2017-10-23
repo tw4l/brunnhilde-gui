@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="directoryTab">
      <attribute name="title">
@@ -36,7 +36,7 @@
         <x>11</x>
         <y>21</y>
         <width>611</width>
-        <height>341</height>
+        <height>311</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -170,7 +170,7 @@
         <x>11</x>
         <y>21</y>
         <width>611</width>
-        <height>351</height>
+        <height>321</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_15">
