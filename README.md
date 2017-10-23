@@ -38,7 +38,7 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 #### GUI Installation in Linux
 
 * Download zip or tar.gz file from Github and extract files to location of your choice  
-* Modify the install script to create the Brunnhilde GUI.desktop file in a location of your choice. This will will become the graphical launcher for the Brunnhilde GUI. Alternatively, save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
+* Modify the install script to create the Brunnhilde GUI.desktop file in a location of your choice. This will become the graphical launcher for the Brunnhilde GUI. Alternatively, save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
 `python3 /path/to/brunnhilde-gui/main.py`  
 
 #### GUI Installation in MacOS/OS X  
