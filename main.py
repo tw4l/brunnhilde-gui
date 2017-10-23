@@ -44,6 +44,8 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
         # Set buttons
         self.dirCancelBtn.setEnabled(False)
         self.dirStartScanBtn.setEnabled(True)
+        self.diskImageCancelBtn.setEnabled(False)
+        self.diskImageStartScan.setEnabled(True)
     
     def about_dialog(self):
         QMessageBox.information(self, "About", 
