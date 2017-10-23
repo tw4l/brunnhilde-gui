@@ -1,6 +1,5 @@
 ## Brunnhilde GUI  
-
-![brunnhildegui](https://github.com/timothyryanwalsh/brunnhilde-gui/blob/master/brunnhildegui.png)  
+Version 2.0.0
 
 ### Installation  
 
@@ -14,42 +13,39 @@ Install the Brunnhilde command-line utility:
 
 `sudo pip install brunnhilde`
 
-This version of the GUI requires Brunnhilde 1.4.0 or higher.
+This version of the GUI requires Brunnhilde 1.6.1 or higher. To check which version of Brunnhilde you have installed, type: `brunnhilde.py -V`. To upgrade your version of Brunnhilde to the latest, use `sudo pip install --upgrade brunnhilde`
 
-#### Install PyQt4  
+#### Install PyQt5  
 
-Install PyQt4 if not already installed.  
+Install PyQt5 if not already installed.  
 
 ##### Ubuntu/Debian Linux (including Bitcurator 1.7.74+)  
 
-`sudo apt-get install python-qt4`  
+`sudo apt-get install python3-pyqt5`  
 
 ##### macOS
-
-In Mavericks, simply install PyQt4 with Homebrew:  
-`brew install pyqt` 
-
-Note: PyQt4 is not natively supported in macOS Sierra. A port to PyQt5 is upcoming but not yet scheduled. In the meantime, using Brunnhilde GUI in Sierra requires installation of Qt4 through [this homebrew tap](https://github.com/cartr/homebrew-qt4) prior to installation of PyQt4 as described above. Once the tap is installed, install PyQt4 with `brew install pyqt`. Follow the additional instructions given by Homebrew to complete installation. Please be aware that doing so will interfere with the native installation of Qt5.  
+  
+`brew install pyqt`
 
 #### GUI Installation in Bitcurator  
 
 * Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone').  
-* Run install.sh script:  
-`sudo bash install.sh`  
+* Run install shell script:  
+`sudo bash install`  
 
-You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Additional Tools" folder.  
+You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Forensics and Reporting" folder.  
 
 #### GUI Installation in Linux
 
 * Download zip or tar.gz file from Github and extract files to location of your choice  
-* Modify the install.sh script to create the Brunnhilde GUI.desktop file in a location of your choice. This will will become the graphical launcher for the Brunnhilde GUI. Or, simply save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
-`python /path/to/brunnhilde-gui/main.py`  
+* Modify the install script to create the Brunnhilde GUI.desktop file in a location of your choice. This will become the graphical launcher for the Brunnhilde GUI. Alternatively, save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
+`python3 /path/to/brunnhilde-gui/main.py`  
 
 #### GUI Installation in MacOS/OS X  
 
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Launch GUI by entering the following in a terminal:  
-`python /path/to/brunnhilde-gui/main.py`  
+`python3 /path/to/brunnhilde-gui/main.py`  
 
 ### Usage  
 
@@ -59,7 +55,7 @@ For detailed information about how Brunnhilde works, see the [Brunnhilde command
 
 The MIT License (MIT)  
 
-Copyright (c) 2016 Tim Walsh  
+Copyright (c) 2017 Tim Walsh  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  
 
