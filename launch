@@ -1,2 +1,2 @@
 #!/bin/bash
-python /usr/share/brunnhilde-gui/main.py
+python3 /usr/share/brunnhilde-gui/main.py
