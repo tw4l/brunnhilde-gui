@@ -19,13 +19,7 @@ This version of the GUI requires Brunnhilde 1.6.1 or higher. To check which vers
 
 Install PyQt5 if not already installed.  
 
-##### Ubuntu/Debian Linux (including Bitcurator 1.7.74+)  
-
-`sudo apt-get install python3-pyqt5`  
-
-##### macOS
-  
-`brew install pyqt`
+`sudo pip install pyqt5` or `sudo pip3 install pyqt5` (depending on default Python/pip in your system)
 
 #### GUI Installation in Bitcurator  
 
