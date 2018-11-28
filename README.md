@@ -26,6 +26,8 @@ Install PyQt5 if not already installed.
 * Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone').  
 * Run install shell script:  
 `sudo bash install`  
+* Install Python 3 PyQt5 library:  
+`sudo pip3 install pyqt5`  
 
 You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Forensics and Reporting" folder.  
 
