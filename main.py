@@ -49,7 +49,7 @@ class BrunnhildeApp(QMainWindow, design.Ui_Brunnhilde):
     
     def about_dialog(self):
         QMessageBox.information(self, "About", 
-            "Brunnhilde GUI v.2.0.0\nTim Walsh, 2017\nMIT License\nhttps://github.com/timothyryanwalsh/brunnhilde-gui\nCompatible with Brunnhilde 1.6.1+")
+            "Brunnhilde GUI v.2.0.0\nTim Walsh, 2017\nMIT License\nhttps://github.com/tw4l/brunnhilde-gui\nCompatible with Brunnhilde 1.6.1+")
 
     def browse_dirsource(self):
         self.dirSource.clear() # clear directory source text
