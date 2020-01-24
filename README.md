@@ -45,7 +45,7 @@ You will now be able to launch the Brunnhilde GUI by double-clicking on the Brun
 
 ### Usage  
 
-For detailed information about how Brunnhilde works, see the [Brunnhilde command line utility](https://github.com/timothyryanwalsh/brunnhilde) repo.  
+For detailed information about how Brunnhilde works, see the [Brunnhilde command line utility](https://github.com/tw4l/brunnhilde) repo.  
 
 ### Creators
 
