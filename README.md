@@ -1,53 +1,58 @@
-## Brunnhilde GUI  
-Version 2.0.0
+# Brunnhilde GUI
 
-### Installation  
+Version 2.1.0
 
-#### Install Siegfried  
+## Installation  
+
+### Install Siegfried  
 
 Install Siegfried. See [Siegfried Github repo](https://github.com/richardlehane/siegfried/) for instructions.
 
-#### Install Brunnhilde CLI utility  
+### Install Brunnhilde CLI utility  
 
 Install the Brunnhilde command-line utility:
 
-`sudo pip install brunnhilde`
+`sudo pip install brunnhilde` or `sudo pip3 install brunnhilde`
 
 This version of the GUI requires Brunnhilde 1.6.1 or higher. To check which version of Brunnhilde you have installed, type: `brunnhilde.py -V`. To upgrade your version of Brunnhilde to the latest, use `sudo pip install --upgrade brunnhilde`
 
-#### Install PyQt5  
+### Install PyQt5  
 
 Install PyQt5 if not already installed.  
 
-`sudo pip install pyqt5` or `sudo pip3 install pyqt5` (depending on default Python/pip in your system)
+`sudo pip install pyqt5` or `sudo pip3 install pyqt5`
 
-#### GUI Installation in Bitcurator  
+#### GUI Installation in Bitcurator 4.x.x / Ubuntu 22
 
-* Download tar.gz or zip file and extract to location of your choice (or clone repo with 'git clone').  
-* Run install shell script:  
-`sudo bash install`  
-* Install Python 3 PyQt5 library:  
-`sudo pip3 install pyqt5`  
+```bash
+git clone https://github.com/tw4l/brunnhilde-gui
+cd brunnhilde-gui
+sudo ./install
+```
 
-You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Forensics and Reporting" folder.  
+You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the upper menu under Applications -> Forensics and Reporting.
 
-#### GUI Installation in Linux
+### GUI Installation in Bitcurator 1.x.x-3.x.x / Ubuntu 18-20
 
-* Download zip or tar.gz file from Github and extract files to location of your choice  
-* Modify the install script to create the Brunnhilde GUI.desktop file in a location of your choice. This will become the graphical launcher for the Brunnhilde GUI. Alternatively, save the code to a location of your choice and launch the GUI by entering the following in a terminal:   
-`python3 /path/to/brunnhilde-gui/main.py`  
+```bash
+git clone https://github.com/tw4l/brunnhilde-gui
+cd brunnhilde-gui
+sudo ./install-bc2-ubuntu18
+```
 
-#### GUI Installation in MacOS/OS X  
+You will now be able to launch the Brunnhilde GUI by double-clicking on the Brunnhilde icon in the "Forensics and Reporting" Desktop folder.  
+
+### GUI Installation in MacOS/OS X  
 
 * Download zip or tar.gz file from Github and extract files to location of your choice  
 * Launch GUI by entering the following in a terminal:  
 `python3 /path/to/brunnhilde-gui/main.py`  
 
-### Usage  
+## Usage  
 
 For detailed information about how Brunnhilde works, see the [Brunnhilde command line utility](https://github.com/tw4l/brunnhilde) repo.  
 
-### Creators
+## Creators
 
 * Canadian Centre for Architecture
 * Tessa Walsh
