@@ -18,6 +18,10 @@ sudo mv main.py $install_dir
 
 desktop_file='/home/bcadmin/Desktop/Forensics and Reporting/Brunnhilde GUI.desktop'
 
+if [ -f $desktop_file ]; then
+  sudo rm -rf $desktop_file
+fi
+
 sudo touch $desktop_file
 echo '[Desktop Entry]' | sudo tee --append $desktop_file
 echo 'Type=Application' | sudo tee --append $desktop_file

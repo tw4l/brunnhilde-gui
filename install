@@ -7,7 +7,6 @@ install_dir='/usr/share/brunnhilde-gui'
 if [ -d $install_dir ]; then
   sudo rm -rf $install_dir
 fi
-
 sudo mkdir $install_dir
 
 sudo mv design.py $install_dir
@@ -17,6 +16,10 @@ sudo mv launch $install_dir
 sudo mv main.py $install_dir
 
 desktop_file='/usr/share/applications/BrunnhildeGUI.desktop'
+
+if [ -f $desktop_file ]; then
+  sudo rm -rf $desktop_file
+fi
 
 sudo touch $desktop_file
 echo '[Desktop Entry]' | sudo tee --append $desktop_file
