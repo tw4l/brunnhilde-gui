@@ -22,7 +22,7 @@ Install PyQt5 if not already installed.
 
 `sudo pip install pyqt5` or `sudo pip3 install pyqt5`
 
-#### GUI Installation in Bitcurator 4.x.x / Ubuntu 22
+### GUI Installation in Bitcurator 4.x.x / Ubuntu 22
 
 ```bash
 git clone https://github.com/tw4l/brunnhilde-gui
