@@ -34,5 +34,5 @@ sudo chown $USER:$GROUP $desktop_file
 sudo chmod 644 $desktop_file
 sudo chown -R $USER:$GROUP $install_dir
 
-sudo chmod u+x $desktop_file
-sudo chmod u+x $install_dir/launch
+sudo chmod +x $desktop_file
+sudo chmod +x $install_dir/launch
