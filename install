@@ -9,11 +9,11 @@ if [ -d $install_dir ]; then
 fi
 sudo mkdir $install_dir
 
-sudo mv design.py $install_dir
-sudo mv design.ui $install_dir
-sudo mv icon.png $install_dir
-sudo mv launch $install_dir
-sudo mv main.py $install_dir
+sudo cp design.py $install_dir
+sudo cp design.ui $install_dir
+sudo cp icon.png $install_dir
+sudo cp launch $install_dir
+sudo cp main.py $install_dir
 
 desktop_file='/usr/share/applications/BrunnhildeGUI.desktop'
 
@@ -27,11 +27,12 @@ echo 'Type=Application' | sudo tee --append $desktop_file
 echo 'Name=Brunnhilde GUI' | sudo tee --append $desktop_file
 echo 'Exec=/usr/share/brunnhilde-gui/launch' | sudo tee --append $desktop_file
 echo 'Icon=/usr/share/brunnhilde-gui/icon.png' | sudo tee --append $desktop_file
-echo 'Categories=Forensics and Reporting' | sudo tee -append $desktop_file
+echo 'Categories=Forensics and Reporting' | sudo tee --append $desktop_file
 
-sudo chown bcadmin:bcadmin $desktop_file
+GROUP=$(id -gn)
+sudo chown $USER:$GROUP $desktop_file
 sudo chmod 644 $desktop_file
-sudo chown -R bcadmin:bcadmin $install_dir
+sudo chown -R $USER:$GROUP $install_dir
 
 sudo chmod u+x $desktop_file
 sudo chmod u+x $install_dir/launch
